@@ -1,9 +1,10 @@
+version: "3.9"
 services:
   postgres:
     image: postgres:latest
     container_name: postgres
     environment:
-      - "TZ=Europe/Amsterdam"
+      - "TZ=Europe/Paris"
       - "POSTGRES_USER=docker"
       - "POSTGRES_PASSWORD=docker"
     ports:
@@ -15,7 +16,7 @@ services:
     image: cassandra:3
     container_name: cassandra
     ports:
-      - "7000:7000"
+      - "7001:7000"
       - "9042:9042"
     environment:
       - "CASSANDRA_CLUSTER_NAME=OUR_DOCKERIZED_CASSANDRA_SINGLE_NODE_CLUSTER"
